@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cammino dei Pescatori — Le nostre proposte</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <style>
   :root{
     --ocean:#12384a;
@@ -119,6 +121,25 @@
   .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:middle}
   .easy{background:var(--sage)}.med{background:#e0a34a}.hard{background:var(--sunset)}
 
+  /* MAPS */
+  .map{
+    height:260px;border-radius:10px;margin:16px 0 6px;
+    border:1px solid var(--line);background:#e8eef0;z-index:1;
+  }
+  .map-cap{
+    font-size:12px;color:var(--muted);margin-bottom:14px;text-align:center;font-style:italic;
+  }
+  .leaflet-container{font:inherit;border-radius:10px}
+  .leaflet-popup-content{font-size:13.5px;margin:9px 12px}
+  .leaflet-popup-content b{color:var(--ocean)}
+  .mk{
+    background:var(--ocean);color:#fff;border-radius:50%;width:24px;height:24px;
+    display:grid;place-items:center;font-size:12px;font-weight:700;
+    border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.35);
+  }
+  .mk.start{background:var(--sage)}
+  .mk.end{background:var(--sunset)}
+
   .note{
     background:#f7f3ec;border-left:3px solid var(--sand);padding:13px 16px;
     border-radius:0 8px 8px 0;font-size:14.5px;margin:14px 0;color:#4a5760;
@@ -213,6 +234,8 @@
         <tr><td class="d">2</td><td>Salema → Praia da Luz</td><td>~10–12</td><td><span class="dot med"></span>Moderata</td></tr>
         <tr><td class="d">3</td><td>Praia da Luz → Lagos</td><td>~10–11</td><td><span class="dot easy"></span>Facile/moderata</td></tr>
       </table>
+      <div class="map" data-pts='[["Sagres","Partenza · giorno 1",37.008,-8.941,"start"],["Praia da Ingrina","Arrivo giorno 1",37.043,-8.876,""],["Salema","Partenza giorno 2 (in taxi da Ingrina)",37.064,-8.831,""],["Burgau","Sosta caffè · giorno 2",37.077,-8.777,""],["Praia da Luz","Arrivo giorno 2 · partenza giorno 3",37.088,-8.726,""],["Lagos","Arrivo finale",37.102,-8.674,"end"]]' data-gap="1"></div>
+      <div class="map-cap">Verde = partenza · Arancio = arrivo · Tratteggio = spostamento in taxi</div>
       <p style="font-size:14.5px;color:#4a5760">Il trucco è saltare in taxi il tratto <strong>Ingrina → Salema</strong>, cioè la porzione più tecnica di tutto il cammino. Restano le cose belle: Martinhal, Barranco, Ingrina il primo giorno; Boca do Rio, il forte di Almadena e Burgau il secondo; le falesie di Ponta da Piedade e l'arrivo a Lagos il terzo.</p>
       <div class="note good"><strong>Alloggio — facile.</strong> Si dorme solo a Sagres, Salema e Praia da Luz (o Lagos): tutti paesi con hotel, ristoranti, farmacia e bancomat. Nessuna prenotazione acrobatica.</div>
       <div class="stars">
@@ -245,6 +268,8 @@
         <tr><td class="d">2</td><td>Cavaleiro → Cabo Sardão → Zambujeira</td><td>~11</td><td><span class="dot med"></span>Moderata</td></tr>
         <tr><td class="d">3</td><td>Zambujeira → Azenha do Mar</td><td>~12–13</td><td><span class="dot med"></span>Moderata</td></tr>
       </table>
+      <div class="map" data-pts='[["Vila Nova de Milfontes","Partenza · giorno 1",37.725,-8.783,"start"],["Praia das Furnas","Traversata in taxi-boat",37.712,-8.792,""],["Almograve","Arrivo giorno 1",37.651,-8.802,""],["Cavaleiro","Partenza giorno 2 (in taxi)",37.598,-8.803,""],["Cabo Sardão","Faro e nidi di cicogna",37.5965,-8.8195,""],["Zambujeira do Mar","Arrivo giorno 2 · partenza giorno 3",37.523,-8.788,""],["Azenha do Mar","Arrivo finale",37.469,-8.792,"end"]]' data-gap="2"></div>
+      <div class="map-cap">Verde = partenza · Arancio = arrivo · Tratteggio = barca o taxi</div>
       <p style="font-size:14.5px;color:#4a5760">Il primo giorno si attraversa il Rio Mira in <strong>taxi-boat</strong>, evitando il ponte e risparmiando km poco interessanti. Il secondo giorno partendo da Cavaleiro si taglia la parte dunosa e si tiene il pezzo forte: il faro di <strong>Cabo Sardão</strong> e i nidi di cicogna sulle falesie.</p>
       <div class="note warn"><strong>Alloggio — da verificare.</strong> Cavaleiro e Zambujeira hanno hotel e servizi, ma <strong>Azenha do Mar risulta un villaggio minuscolo con un solo ristorante</strong>: non è chiaro che ci sia un alloggio. Da controllare prima di prenotare — in alternativa si dorme a Odeceixe o Zambujeira con un transfer serale.</div>
       <div class="stars">
@@ -277,6 +302,8 @@
         <tr><td class="d">2</td><td>Zambujeira → Azenha do Mar</td><td>~12–13</td><td><span class="dot med"></span>Moderata</td></tr>
         <tr><td class="d">3</td><td>Azenha do Mar → Odeceixe</td><td>~7–8</td><td><span class="dot easy"></span>Facile</td></tr>
       </table>
+      <div class="map" data-pts='[["Cavaleiro","Partenza · giorno 1",37.598,-8.803,"start"],["Cabo Sardão","Faro sulle falesie",37.5965,-8.8195,""],["Zambujeira do Mar","Arrivo giorno 1",37.523,-8.788,""],["Praia dos Alteirinhos","Spiaggia con grotta",37.512,-8.790,""],["Azenha do Mar","Arrivo giorno 2",37.469,-8.792,""],["Odeceixe","Arrivo finale",37.435,-8.766,"end"]]'></div>
+      <div class="map-cap">Percorso continuo, senza spostamenti in taxi</div>
       <p style="font-size:14.5px;color:#4a5760">Per chi vuole la sensazione vera del cammino: <em>ieri abbiamo finito qui, oggi ripartiamo da qui</em>. E l'ultimo giorno è volutamente corto — si arriva a Odeceixe presto, in tempo per un pranzo con calma invece di una corsa.</p>
       <div class="note warn"><strong>Alloggio — il punto critico.</strong> Si dovrebbe dormire ad <strong>Azenha do Mar</strong>, che dai dati risulta avere solo un ristorante e nessuna struttura ricettiva certa. Fattibile solo se si trova un alloggio lì o si accetta un transfer serale a Odeceixe/Zambujeira e ritorno la mattina.</div>
       <div class="stars">
@@ -310,6 +337,8 @@
         <tr><td class="d">3</td><td>Salema → Praia da Luz</td><td>~10–12</td><td><span class="dot med"></span>Moderata</td></tr>
         <tr><td class="d">4</td><td>Praia da Luz → Lagos</td><td>~10–11</td><td><span class="dot med"></span>Moderata</td></tr>
       </table>
+      <div class="map" data-pts='[["Sagres","Partenza · giorno 1",37.008,-8.941,"start"],["Praia da Ingrina","Arrivo giorno 1",37.043,-8.876,""],["Praia do Zavial","Sosta pranzo · giorno 2",37.043,-8.870,""],["Salema","Arrivo giorno 2",37.064,-8.831,""],["Burgau","Sosta · giorno 3",37.077,-8.777,""],["Praia da Luz","Arrivo giorno 3",37.088,-8.726,""],["Lagos","Arrivo finale · Ponta da Piedade",37.102,-8.674,"end"]]'></div>
+      <div class="map-cap">Percorso continuo a piedi, dalla punta sud-ovest fino a Lagos</div>
       <p style="font-size:14.5px;color:#4a5760">Il Sagres–Lagos vero, senza saltare niente — con la tappa più dura spezzata in due giorni corti. La soddisfazione di dire <em>"abbiamo fatto tutto il tratto"</em> è reale.</p>
       <div class="note warn"><strong>Attenzione al giorno 2.</strong> Sono solo 8–9 km, ma <strong>9 km non vuol dire 9 km facili</strong>: è il tratto con i saliscendi continui su pietre smosse. Con terreno asciutto e bastoncini è gestibile; dopo giorni di pioggia lo eviterei.</div>
       <div class="note warn"><strong>Alloggio — da verificare.</strong> A <strong>Ingrina</strong> risulta esserci solo un ristorante (accetta contanti, chiuso il martedì) e nessun hotel certo. Probabile che serva un transfer serale su Salema o Vila do Bispo e ritorno al mattino.</div>
@@ -344,6 +373,8 @@
         <tr><td class="d">3</td><td>Salema → Praia da Luz</td><td>~10–12</td><td><span class="dot med"></span>Moderata</td></tr>
         <tr><td class="d">4</td><td>Praia da Luz → Lagos</td><td>~10–11</td><td><span class="dot med"></span>Moderata</td></tr>
       </table>
+      <div class="map" data-pts='[["Carrapateira","Circuito costiero · giorno 1",37.180,-8.897,"start"],["Praia da Bordeira","Spiaggia enorme tra le falesie",37.199,-8.907,""],["Praia do Amado","Vista dall alto delle scogliere",37.163,-8.903,""],["Cabo de São Vicente","Punta sud-ovest d Europa",37.023,-8.996,""],["Sagres","Partenza · giorno 2",37.008,-8.941,""],["Praia da Ingrina","Arrivo giorno 2",37.043,-8.876,""],["Salema","Partenza giorno 3 (in taxi)",37.064,-8.831,""],["Praia da Luz","Arrivo giorno 3",37.088,-8.726,""],["Lagos","Arrivo finale",37.102,-8.674,"end"]]' data-gap="3"></div>
+      <div class="map-cap">Segmenti scelti, collegati da transfer · basi fisse a Sagres e Lagos</div>
       <p style="font-size:14.5px;color:#4a5760">Non è un cammino continuo: è una <strong>selezione dei pezzi migliori</strong>. Si sacrifica la continuità, si guadagna tutto il resto — Carrapateira e Praia da Bordeira, Sagres, Martinhal, Ingrina, Salema, Burgau, Luz, Ponta da Piedade, Lagos. Senza mai affrontare il tratto peggiore.</p>
       <div class="note good"><strong>Alloggio — la più solida delle sei.</strong> Usando <strong>Sagres e Lagos come basi fisse</strong> con transfer giornalieri, si evita del tutto il problema di cercare un letto in frazioni con un solo ristorante. È il vantaggio nascosto di questa proposta: non solo è la più prudente fisicamente, è anche l'unica che non ha punti interrogativi sul dove dormire.</div>
       <div class="stars">
@@ -377,6 +408,8 @@
         <tr><td class="d">3</td><td>Cabo Sardão → Zambujeira</td><td>~10</td><td><span class="dot med"></span>Moderata</td></tr>
         <tr><td class="d">4</td><td>Zambujeira → Azenha do Mar</td><td>~12–13</td><td><span class="dot med"></span>Moderata</td></tr>
       </table>
+      <div class="map" data-pts='[["Vila Nova de Milfontes","Partenza · giorno 1",37.725,-8.783,"start"],["Praia das Furnas","Traversata in taxi-boat",37.712,-8.792,""],["Almograve","Arrivo giorno 1 · partenza giorno 2",37.651,-8.802,""],["Cabo Sardão","Faro · arrivo giorno 2",37.5965,-8.8195,""],["Cavaleiro","Dove si dorme (transfer)",37.598,-8.803,""],["Zambujeira do Mar","Arrivo giorno 3",37.523,-8.788,""],["Azenha do Mar","Arrivo finale",37.469,-8.792,"end"]]' data-gap="1"></div>
+      <div class="map-cap">Due giorni interi sulle falesie di Cabo Sardão, senza fretta</div>
       <p style="font-size:14.5px;color:#4a5760">Due giornate intere dedicate alle falesie di <strong>Cabo Sardão</strong> invece di attraversarle di corsa. È la versione per chi dice: <em>voglio fare un vero piccolo cammino, ma soprattutto voglio godermelo.</em></p>
       <div class="note warn"><strong>Alloggio — due punti da verificare.</strong> <strong>Cabo Sardão</strong> è un capo con un faro, non un paese: la notte del giorno 2 va risolta con un transfer su Cavaleiro (che ha hotel, ristoranti e negozio) o Zambujeira. E anche qui l'ultima notte ad <strong>Azenha do Mar</strong> è incerta.</div>
       <div class="stars">
@@ -450,9 +483,56 @@
 </div>
 
 <script>
+  function buildMap(el){
+    if(el.dataset.ready) return;
+    el.dataset.ready = '1';
+    var pts;
+    try{ pts = JSON.parse(el.dataset.pts); }catch(e){ return; }
+    var gap = el.dataset.gap ? parseInt(el.dataset.gap,10) : -1;
+
+    var map = L.map(el, {scrollWheelZoom:false});
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+      maxZoom:17, attribution:'© OpenStreetMap'
+    }).addTo(map);
+
+    var latlngs = [];
+    pts.forEach(function(p,i){
+      var name=p[0], desc=p[1], lat=p[2], lng=p[3], kind=p[4]||'';
+      latlngs.push([lat,lng]);
+      var icon = L.divIcon({
+        className:'', iconSize:[24,24], iconAnchor:[12,12],
+        html:'<div class="mk '+kind+'">'+(i+1)+'</div>'
+      });
+      L.marker([lat,lng],{icon:icon}).addTo(map)
+        .bindPopup('<b>'+name+'</b><br>'+desc);
+    });
+
+    // tratto a piedi vs spostamento (tratteggiato) dopo l'indice "gap"
+    for(var i=0;i<latlngs.length-1;i++){
+      var isGap = (i === gap);
+      L.polyline([latlngs[i],latlngs[i+1]],{
+        color: isGap ? '#9aa8b0' : '#d4694a',
+        weight: isGap ? 2.5 : 3.5,
+        opacity: isGap ? .75 : .9,
+        dashArray: isGap ? '6,8' : null
+      }).addTo(map);
+    }
+
+    map.fitBounds(L.latLngBounds(latlngs).pad(0.18));
+    el._lmap = map;
+  }
+
   document.querySelectorAll('.card-head').forEach(function(h){
     h.addEventListener('click', function(){
-      h.parentElement.classList.toggle('open');
+      var card = h.parentElement;
+      card.classList.toggle('open');
+      if(card.classList.contains('open')){
+        var m = card.querySelector('.map');
+        if(m){
+          buildMap(m);
+          setTimeout(function(){ if(m._lmap) m._lmap.invalidateSize(); }, 60);
+        }
+      }
     });
   });
 
