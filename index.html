@@ -21,149 +21,99 @@
   *{box-sizing:border-box;margin:0;padding:0}
   body{
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Georgia,serif;
-    background:var(--cream);
-    color:var(--ink);
-    line-height:1.65;
+    background:var(--cream);color:var(--ink);line-height:1.65;
     -webkit-font-smoothing:antialiased;
   }
   .wrap{max-width:880px;margin:0 auto;padding:0 20px}
 
-  /* HERO */
   header{
     background:linear-gradient(165deg,#0d2c3b 0%,#1d4d63 55%,#2c6379 100%);
     color:#fff;padding:64px 0 56px;position:relative;overflow:hidden;
   }
   header::after{
-    content:"";position:absolute;left:0;right:0;bottom:-2px;height:70px;
-    background:var(--cream);
+    content:"";position:absolute;left:0;right:0;bottom:-2px;height:70px;background:var(--cream);
     clip-path:polygon(0 60%,12% 42%,26% 58%,40% 38%,55% 56%,70% 36%,85% 54%,100% 34%,100% 100%,0 100%);
   }
-  .eyebrow{
-    letter-spacing:.22em;text-transform:uppercase;font-size:11px;
-    opacity:.75;margin-bottom:16px;font-weight:600;
-  }
-  header h1{
-    font-size:clamp(30px,6vw,46px);line-height:1.15;font-weight:700;
-    margin-bottom:14px;letter-spacing:-.02em;
-  }
-  header p.sub{font-size:17px;opacity:.88;max-width:560px}
-  .facts{
-    display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;position:relative;z-index:2;
-  }
-  .fact{
-    background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.2);
-    padding:7px 14px;border-radius:999px;font-size:13px;backdrop-filter:blur(4px);
-  }
+  .eyebrow{letter-spacing:.22em;text-transform:uppercase;font-size:11px;opacity:.75;margin-bottom:16px;font-weight:600}
+  header h1{font-size:clamp(30px,6vw,46px);line-height:1.15;font-weight:700;margin-bottom:14px;letter-spacing:-.02em}
+  header p.sub{font-size:17px;opacity:.88;max-width:580px}
+  .facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;position:relative;z-index:2}
+  .fact{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.2);padding:7px 14px;border-radius:999px;font-size:13px}
 
-  /* SECTIONS */
   section{padding:44px 0}
-  h2{
-    font-size:26px;letter-spacing:-.01em;margin-bottom:8px;color:var(--ocean);
-  }
-  h2 .kicker{
-    display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;
-    color:var(--sunset);font-weight:700;margin-bottom:6px;
-  }
-  .lede{color:var(--muted);margin-bottom:26px;font-size:15.5px;max-width:640px}
+  h2{font-size:26px;letter-spacing:-.01em;margin-bottom:8px;color:var(--ocean)}
+  h2 .kicker{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--sunset);font-weight:700;margin-bottom:6px}
+  .lede{color:var(--muted);margin-bottom:26px;font-size:15.5px;max-width:660px}
 
-  /* FILTER */
   .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px}
   .filters button{
     font:inherit;font-size:14px;cursor:pointer;padding:9px 18px;border-radius:999px;
-    border:1.5px solid var(--line);background:#fff;color:var(--ocean);
-    transition:all .18s ease;
+    border:1.5px solid var(--line);background:#fff;color:var(--ocean);transition:all .18s ease;
   }
   .filters button:hover{border-color:var(--ocean-light)}
   .filters button.on{background:var(--ocean);color:#fff;border-color:var(--ocean)}
 
-  /* CARDS */
-  .card{
-    background:#fff;border:1px solid var(--line);border-radius:14px;
-    margin-bottom:16px;overflow:hidden;transition:box-shadow .2s,transform .2s;
-  }
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;margin-bottom:16px;overflow:hidden;transition:box-shadow .2s}
   .card:hover{box-shadow:0 6px 24px rgba(18,56,74,.09)}
   .card.pick{border-color:var(--sunset);border-width:2px}
-  .card-head{
-    padding:20px 22px;cursor:pointer;display:flex;align-items:flex-start;gap:14px;
-  }
-  .num{
-    flex:0 0 34px;height:34px;border-radius:9px;background:var(--sand);
-    display:grid;place-items:center;font-weight:700;color:var(--ocean);font-size:15px;
-  }
+  .card-head{padding:20px 22px;cursor:pointer;display:flex;align-items:flex-start;gap:14px}
+  .num{flex:0 0 34px;height:34px;border-radius:9px;background:var(--sand);display:grid;place-items:center;font-weight:700;color:var(--ocean);font-size:15px}
   .card.pick .num{background:var(--sunset);color:#fff}
   .card-title{flex:1;min-width:0}
   .card-title h3{font-size:18px;line-height:1.3;margin-bottom:5px}
-  .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
-  .tag{
-    font-size:11.5px;padding:3px 9px;border-radius:6px;background:#f1ede5;
-    color:var(--muted);font-weight:600;letter-spacing:.02em;
-  }
+  .card-title .sub{font-size:13.5px;color:var(--muted);font-style:italic}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+  .tag{font-size:11.5px;padding:3px 9px;border-radius:6px;background:#f1ede5;color:var(--muted);font-weight:600}
   .tag.days{background:var(--ocean);color:#fff}
   .tag.best{background:var(--sunset);color:#fff}
   .tag.km{background:#e8f0ea;color:#4a7050}
-  .chev{
-    flex:0 0 auto;color:var(--muted);font-size:20px;line-height:1;
-    transition:transform .22s ease;padding-top:4px;
-  }
+  .tag.dp{background:#eef2f5;color:#4a6270}
+  .chev{flex:0 0 auto;color:var(--muted);font-size:20px;line-height:1;transition:transform .22s ease;padding-top:4px}
   .card.open .chev{transform:rotate(180deg)}
   .card-body{display:none;padding:0 22px 22px;border-top:1px solid var(--line);margin-top:-1px}
   .card.open .card-body{display:block}
   .card-body > *:first-child{margin-top:18px}
 
   table{width:100%;border-collapse:collapse;font-size:14.5px;margin:14px 0}
-  th{
-    text-align:left;font-size:11px;letter-spacing:.12em;text-transform:uppercase;
-    color:var(--muted);font-weight:700;padding:0 10px 8px 0;border-bottom:1px solid var(--line);
-  }
-  td{padding:11px 10px 11px 0;border-bottom:1px solid #f0ebe2;vertical-align:top}
+  th{text-align:left;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700;padding:0 8px 8px 0;border-bottom:1px solid var(--line)}
+  td{padding:11px 8px 11px 0;border-bottom:1px solid #f0ebe2;vertical-align:top}
   tr:last-child td{border-bottom:none}
   td.d{white-space:nowrap;font-weight:700;color:var(--ocean-light)}
+  td.n{white-space:nowrap;font-variant-numeric:tabular-nums}
   .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:middle}
   .easy{background:var(--sage)}.med{background:#e0a34a}.hard{background:var(--sunset)}
 
-  /* MAPS */
-  .map{
-    height:260px;border-radius:10px;margin:16px 0 6px;
-    border:1px solid var(--line);background:#e8eef0;z-index:1;
-  }
-  .map-cap{
-    font-size:12px;color:var(--muted);margin-bottom:14px;text-align:center;font-style:italic;
-  }
+  .map{height:280px;border-radius:10px;margin:16px 0 6px;border:1px solid var(--line);background:#e8eef0;z-index:1}
+  .map-cap{font-size:12px;color:var(--muted);margin-bottom:14px;text-align:center;font-style:italic}
   .leaflet-container{font:inherit;border-radius:10px}
   .leaflet-popup-content{font-size:13.5px;margin:9px 12px}
   .leaflet-popup-content b{color:var(--ocean)}
-  .mk{
-    background:var(--ocean);color:#fff;border-radius:50%;width:24px;height:24px;
-    display:grid;place-items:center;font-size:12px;font-weight:700;
-    border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.35);
-  }
+  .mk{background:var(--ocean);color:#fff;border-radius:50%;width:24px;height:24px;display:grid;place-items:center;font-size:12px;font-weight:700;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.35)}
   .mk.start{background:var(--sage)}
   .mk.end{background:var(--sunset)}
+  .mk.dim{background:#93a4ad;width:19px;height:19px;font-size:10px}
 
-  .note{
-    background:#f7f3ec;border-left:3px solid var(--sand);padding:13px 16px;
-    border-radius:0 8px 8px 0;font-size:14.5px;margin:14px 0;color:#4a5760;
-  }
+  .note{background:#f7f3ec;border-left:3px solid var(--sand);padding:13px 16px;border-radius:0 8px 8px 0;font-size:14.5px;margin:14px 0;color:#4a5760}
   .note strong{color:var(--ocean)}
   .note.warn{background:#fdf2ee;border-left-color:var(--sunset)}
   .note.good{background:#eff5f0;border-left-color:var(--sage)}
 
-  .stars{display:flex;flex-wrap:wrap;gap:14px;margin-top:16px;font-size:13.5px}
-  .stars div{color:var(--muted)}
-  .stars b{color:var(--ink);display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px;font-weight:700}
-  .s{color:var(--sunset);letter-spacing:1px}
+  .scores{display:flex;flex-wrap:wrap;gap:16px;margin-top:16px;padding-top:16px;border-top:1px solid #f0ebe2}
+  .score{flex:1;min-width:110px}
+  .score b{display:block;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;font-weight:700}
+  .score .val{font-size:19px;font-weight:700;color:var(--ocean);line-height:1}
+  .score .val span{font-size:12px;color:var(--muted);font-weight:400}
+  .bar{height:5px;background:#eee8dd;border-radius:3px;margin-top:6px;overflow:hidden}
+  .bar i{display:block;height:100%;background:var(--sunset);border-radius:3px}
+  .bar.b-sage i{background:var(--sage)}
+  .bar.b-ocean i{background:var(--ocean-light)}
 
-  /* COMPARE */
   .compare{overflow-x:auto;-webkit-overflow-scrolling:touch}
-  .compare table{min-width:620px;font-size:13.5px}
-  .compare td{padding:12px 10px}
+  .compare table{min-width:660px;font-size:13.5px}
+  .compare td{padding:12px 8px}
   .compare tr.hl td{background:#fdf6f2}
 
-  /* VERDICT */
-  .verdict{
-    background:linear-gradient(160deg,#12384a,#1f5468);color:#fff;
-    border-radius:16px;padding:30px 26px;margin-top:8px;
-  }
+  .verdict{background:linear-gradient(160deg,#12384a,#1f5468);color:#fff;border-radius:16px;padding:30px 26px}
   .verdict h2{color:#fff;margin-bottom:18px}
   .verdict h2 .kicker{color:#e9b08f}
   .v-item{padding:16px 0;border-bottom:1px solid rgba(255,255,255,.14)}
@@ -172,16 +122,19 @@
   .v-item .pickname{font-size:18px;font-weight:700;margin-bottom:5px}
   .v-item p{font-size:14.5px;opacity:.85;line-height:1.6}
 
-  footer{
-    padding:34px 0 44px;color:var(--muted);font-size:13px;text-align:center;
-    border-top:1px solid var(--line);margin-top:36px;
-  }
-  footer a{color:var(--ocean-light)}
+  .duel{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:8px}
+  .duel > div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px}
+  .duel h4{font-size:15px;color:var(--ocean);margin-bottom:8px}
+  .duel ul{list-style:none;font-size:14px;color:#4a5760}
+  .duel li{padding:4px 0 4px 18px;position:relative}
+  .duel li::before{content:"—";position:absolute;left:0;color:var(--sunset)}
   @media(max-width:600px){
     header{padding:48px 0 44px}
     section{padding:34px 0}
     .card-head{padding:17px 16px}
     .card-body{padding:0 16px 18px}
+    .duel{grid-template-columns:1fr}
+    .map{height:240px}
   }
 </style>
 </head>
@@ -191,11 +144,11 @@
   <div class="wrap">
     <div class="eyebrow">Portogallo · Costa Vicentina</div>
     <h1>Il Cammino<br>dei Pescatori</h1>
-    <p class="sub">Sei modi di camminare sulla costa più selvaggia d'Europa — tra falesie, spiagge deserte e fari sull'Atlantico. Tre o quattro giorni, tappe corte, tutto il tempo di guardarsi intorno.</p>
+    <p class="sub">Sei modi di camminare sulla costa più selvaggia d'Europa. Giornate vere, da 15 a 20 km — ma scelte dove il dislivello è basso e il sentiero non è rotto. Tra falesie, dune, fari sull'Atlantico e spiagge dove non c'è nessuno.</p>
     <div class="facts">
       <div class="fact">🍂 Ottobre — piena stagione</div>
-      <div class="fact">🥾 10–13 km al giorno</div>
-      <div class="fact">🌊 Sempre in vista del mare</div>
+      <div class="fact">🥾 15–20 km al giorno</div>
+      <div class="fact">⛰️ D+ contenuto, 75–220 m</div>
       <div class="fact">🎒 Trasporto bagagli disponibile</div>
     </div>
   </div>
@@ -204,8 +157,8 @@
 <div class="wrap">
 
 <section>
-  <h2><span class="kicker">Come leggerlo</span>Le sei proposte</h2>
-  <p class="lede">Non seguiamo per forza le tappe ufficiali: le spezziamo, le accorciamo, e dove serve usiamo un taxi per saltare i tratti meno belli o troppo tecnici. Tocca una proposta per aprirla.</p>
+  <h2><span class="kicker">Il nuovo criterio</span>Non più tappe corte: tappe efficienti</h2>
+  <p class="lede">Cambiamo metro di giudizio. Venti chilometri con 75 metri di dislivello sono più facili di dieci chilometri con discese ripide su pietre smosse. Quindi: distanze generose dove il terreno è dolce, e via i tratti tecnici — anche a costo di prendere un taxi. Tocca una proposta per aprirla, con mappa.</p>
 
   <div class="filters">
     <button class="on" data-f="all">Tutte e sei</button>
@@ -214,35 +167,38 @@
   </div>
 
   <!-- 1 -->
-  <div class="card" data-days="3">
+  <div class="card pick" data-days="3">
     <div class="card-head">
       <div class="num">1</div>
       <div class="card-title">
-        <h3>Algarve — massimo spettacolo, minimo rischio</h3>
+        <h3>Milfontes → Odeceixe</h3>
+        <div class="sub">Il miglior compromesso in assoluto</div>
         <div class="tags">
+          <span class="tag best">★ Migliore da 3 giorni</span>
           <span class="tag days">3 giorni</span>
-          <span class="tag km">~32–34 km</span>
-          <span class="tag">Salta il tratto duro</span>
+          <span class="tag km">52–55 km</span>
+          <span class="tag dp">D+ ~470 m</span>
         </div>
       </div>
       <div class="chev">⌄</div>
     </div>
     <div class="card-body">
+      <div class="map" data-pts='[["Vila Nova de Milfontes","Partenza · giorno 1",37.725,-8.783,"start"],["Praia das Furnas","Traversata del Rio Mira in barca",37.712,-8.792,"dim"],["Almograve","Arrivo giorno 1 · 12–15 km",37.651,-8.802,""],["Cabo Sardão","Faro e cicogne sulle falesie",37.5965,-8.8195,"dim"],["Zambujeira do Mar","Arrivo giorno 2 · ~21 km",37.523,-8.788,""],["Praia do Carvalhal","Costa rocciosa · giorno 3",37.505,-8.792,"dim"],["Azenha do Mar","Villaggio di pescatori",37.469,-8.792,"dim"],["Odeceixe","Arrivo finale · ~20 km",37.435,-8.766,"end"]]'></div>
+      <div class="map-cap">Cammino continuo · verde partenza, arancio arrivo, grigio i punti di passaggio</div>
       <table>
-        <tr><th>Giorno</th><th>Percorso</th><th>km</th><th>Difficoltà</th></tr>
-        <tr><td class="d">1</td><td>Sagres → Ingrina</td><td>~11</td><td><span class="dot med"></span>Moderata</td></tr>
-        <tr><td class="d">2</td><td>Salema → Praia da Luz</td><td>~10–12</td><td><span class="dot med"></span>Moderata</td></tr>
-        <tr><td class="d">3</td><td>Praia da Luz → Lagos</td><td>~10–11</td><td><span class="dot easy"></span>Facile/moderata</td></tr>
+        <tr><th>Giorno</th><th>Percorso</th><th>km</th><th>D+</th><th>Fatica</th></tr>
+        <tr><td class="d">1</td><td>Milfontes → Almograve</td><td class="n">12–15</td><td class="n">~75 m</td><td><span class="dot easy"></span>Bassa</td></tr>
+        <tr><td class="d">2</td><td>Almograve → Cabo Sardão → Zambujeira</td><td class="n">20–21</td><td class="n">~175 m</td><td><span class="dot med"></span>Media</td></tr>
+        <tr><td class="d">3</td><td>Zambujeira → Azenha do Mar → Odeceixe</td><td class="n">19–20</td><td class="n">~220 m</td><td><span class="dot med"></span>Media</td></tr>
       </table>
-      <div class="map" data-pts='[["Sagres","Partenza · giorno 1",37.008,-8.941,"start"],["Praia da Ingrina","Arrivo giorno 1",37.043,-8.876,""],["Salema","Partenza giorno 2 (in taxi da Ingrina)",37.064,-8.831,""],["Burgau","Sosta caffè · giorno 2",37.077,-8.777,""],["Praia da Luz","Arrivo giorno 2 · partenza giorno 3",37.088,-8.726,""],["Lagos","Arrivo finale",37.102,-8.674,"end"]]' data-gap="1"></div>
-      <div class="map-cap">Verde = partenza · Arancio = arrivo · Tratteggio = spostamento in taxi</div>
-      <p style="font-size:14.5px;color:#4a5760">Il trucco è saltare in taxi il tratto <strong>Ingrina → Salema</strong>, cioè la porzione più tecnica di tutto il cammino. Restano le cose belle: Martinhal, Barranco, Ingrina il primo giorno; Boca do Rio, il forte di Almadena e Burgau il secondo; le falesie di Ponta da Piedade e l'arrivo a Lagos il terzo.</p>
-      <div class="note good"><strong>Alloggio — facile.</strong> Si dorme solo a Sagres, Salema e Praia da Luz (o Lagos): tutti paesi con hotel, ristoranti, farmacia e bancomat. Nessuna prenotazione acrobatica.</div>
-      <div class="stars">
-        <div><b>Panorama</b><span class="s">★★★★★</span></div>
-        <div><b>Fatica</b><span class="s">★★★</span></div>
-        <div><b>Tecnico</b><span class="s">★★★</span></div>
-        <div><b>Logistica</b><span class="s">★★★★★</span></div>
+      <p style="font-size:14.5px;color:#4a5760">Venti chilometri, ma non venti chilometri di montagna. La progressione è bellissima: estuario del Mira, Almograve, le falesie di <strong>Cabo Sardão</strong> con i nidi di cicogna a picco sull'oceano, Zambujeira, poi Alteirinhos, Carvalhal, Praia da Amália e Azenha do Mar prima di chiudere a Odeceixe — dove il Cammino dei Pescatori incontra il Cammino Storico.</p>
+      <div class="note good"><strong>Alloggio — nessun problema.</strong> Milfontes, Almograve, Zambujeira e Odeceixe hanno tutti hotel, ristoranti, negozio e farmacia. È l'unico itinerario Alentejo che non richiede transfer serali per trovare un letto.</div>
+      <div class="note"><strong>Il contro:</strong> parecchia sabbia. <strong>Il pro:</strong> pochissimo dislivello rispetto alla distanza — esattamente quello che serve.</div>
+      <div class="scores">
+        <div class="score"><b>Panorama</b><div class="val">9,5<span>/10</span></div><div class="bar"><i style="width:95%"></i></div></div>
+        <div class="score"><b>Fatica</b><div class="val">6<span>/10</span></div><div class="bar b-sage"><i style="width:60%"></i></div></div>
+        <div class="score"><b>Tecnica</b><div class="val">4<span>/10</span></div><div class="bar b-ocean"><i style="width:40%"></i></div></div>
+        <div class="score"><b>Adatta a noi</b><div class="val">9,5<span>/10</span></div><div class="bar"><i style="width:95%"></i></div></div>
       </div>
     </div>
   </div>
@@ -252,31 +208,33 @@
     <div class="card-head">
       <div class="num">2</div>
       <div class="card-title">
-        <h3>Alentejo — bellissimo ma più dolce</h3>
+        <h3>Vila do Bispo → Sagres + Salema → Lagos</h3>
+        <div class="sub">Algarve spettacolare, saltando il pezzo peggiore</div>
         <div class="tags">
           <span class="tag days">3 giorni</span>
-          <span class="tag km">~35–36 km</span>
-          <span class="tag">Più sabbia, meno roccia</span>
+          <span class="tag km">41–43 km</span>
+          <span class="tag">Massimo wow</span>
         </div>
       </div>
       <div class="chev">⌄</div>
     </div>
     <div class="card-body">
+      <div class="map" data-pts='[["Vila do Bispo","Partenza · giorno 1",37.084,-8.913,"start"],["Cabo de São Vicente","Punta sud-ovest d Europa · faro",37.023,-8.996,"dim"],["Sagres","Arrivo giorno 1 · ~20 km, solo +120 m",37.008,-8.941,""],["Salema","Partenza giorno 2 · in taxi da Sagres",37.064,-8.831,""],["Burgau","Paesino di pescatori · sosta",37.077,-8.777,"dim"],["Praia da Luz","Arrivo giorno 2",37.088,-8.726,""],["Ponta da Piedade","Faraglioni e grotte · giorno 3",37.081,-8.669,"dim"],["Lagos","Arrivo finale",37.102,-8.674,"end"]]' data-gap="2"></div>
+      <div class="map-cap">Tratteggio grigio = trasferimento in taxi Sagres → Salema</div>
       <table>
-        <tr><th>Giorno</th><th>Percorso</th><th>km</th><th>Difficoltà</th></tr>
-        <tr><td class="d">1</td><td>Milfontes → Furnas → Almograve</td><td>~12</td><td><span class="dot easy"></span>Facile</td></tr>
-        <tr><td class="d">2</td><td>Cavaleiro → Cabo Sardão → Zambujeira</td><td>~11</td><td><span class="dot med"></span>Moderata</td></tr>
-        <tr><td class="d">3</td><td>Zambujeira → Azenha do Mar</td><td>~12–13</td><td><span class="dot med"></span>Moderata</td></tr>
+        <tr><th>Giorno</th><th>Percorso</th><th>km</th><th>D+</th><th>Fatica</th></tr>
+        <tr><td class="d">1</td><td>Vila do Bispo → Cabo São Vicente → Sagres</td><td class="n">~20</td><td class="n">~120 m</td><td><span class="dot easy"></span>Bassa</td></tr>
+        <tr><td class="d">2</td><td>Salema → Burgau → Praia da Luz</td><td class="n">10–12</td><td class="n">moderato</td><td><span class="dot med"></span>Media</td></tr>
+        <tr><td class="d">3</td><td>Praia da Luz → Ponta da Piedade → Lagos</td><td class="n">10–11</td><td class="n">moderato</td><td><span class="dot med"></span>Media</td></tr>
       </table>
-      <div class="map" data-pts='[["Vila Nova de Milfontes","Partenza · giorno 1",37.725,-8.783,"start"],["Praia das Furnas","Traversata in taxi-boat",37.712,-8.792,""],["Almograve","Arrivo giorno 1",37.651,-8.802,""],["Cavaleiro","Partenza giorno 2 (in taxi)",37.598,-8.803,""],["Cabo Sardão","Faro e nidi di cicogna",37.5965,-8.8195,""],["Zambujeira do Mar","Arrivo giorno 2 · partenza giorno 3",37.523,-8.788,""],["Azenha do Mar","Arrivo finale",37.469,-8.792,"end"]]' data-gap="2"></div>
-      <div class="map-cap">Verde = partenza · Arancio = arrivo · Tratteggio = barca o taxi</div>
-      <p style="font-size:14.5px;color:#4a5760">Il primo giorno si attraversa il Rio Mira in <strong>taxi-boat</strong>, evitando il ponte e risparmiando km poco interessanti. Il secondo giorno partendo da Cavaleiro si taglia la parte dunosa e si tiene il pezzo forte: il faro di <strong>Cabo Sardão</strong> e i nidi di cicogna sulle falesie.</p>
-      <div class="note warn"><strong>Alloggio — da verificare.</strong> Cavaleiro e Zambujeira hanno hotel e servizi, ma <strong>Azenha do Mar risulta un villaggio minuscolo con un solo ristorante</strong>: non è chiaro che ci sia un alloggio. Da controllare prima di prenotare — in alternativa si dorme a Odeceixe o Zambujeira con un transfer serale.</div>
-      <div class="stars">
-        <div><b>Panorama</b><span class="s">★★★★★</span></div>
-        <div><b>Fatica</b><span class="s">★★½</span></div>
-        <div><b>Tecnico</b><span class="s">★★</span></div>
-        <div><b>Sabbia</b><span class="s">★★★★</span></div>
+      <p style="font-size:14.5px;color:#4a5760">Il primo giorno è il gioiello: <strong>20 km con appena +120 m</strong>, passando da Cabo de São Vicente — il punto più a sud-ovest del continente europeo — e poi giù lungo la costa fino a Sagres. Poi si fa una cosa apparentemente strana ma molto razionale: <strong>taxi da Sagres a Salema</strong>.</p>
+      <div class="note warn"><strong>Perché saltiamo proprio quel tratto.</strong> Sagres–Salema è indicato tra i segmenti più impegnativi del cammino: saliscendi continui sulle falesie, sentiero pietroso, circa +345/−370 m. Non lo saltiamo perché sono 20 km — ne facciamo di più altrove. Lo saltiamo perché sono i 20 km meno compatibili con quello che ci serve.</div>
+      <div class="note good"><strong>Alloggio — tutto risolto.</strong> Si dorme a Sagres e Praia da Luz (o Lagos), entrambi con ogni servizio. Nessuna frazione isolata da gestire.</div>
+      <div class="scores">
+        <div class="score"><b>Panorama</b><div class="val">10<span>/10</span></div><div class="bar"><i style="width:100%"></i></div></div>
+        <div class="score"><b>Fatica</b><div class="val">5<span>/10</span></div><div class="bar b-sage"><i style="width:50%"></i></div></div>
+        <div class="score"><b>Tecnica</b><div class="val">5<span>/10</span></div><div class="bar b-ocean"><i style="width:50%"></i></div></div>
+        <div class="score"><b>Adatta a noi</b><div class="val">9<span>/10</span></div><div class="bar"><i style="width:90%"></i></div></div>
       </div>
     </div>
   </div>
@@ -286,67 +244,71 @@
     <div class="card-head">
       <div class="num">3</div>
       <div class="card-title">
-        <h3>Alentejo — cammino continuo e tranquillo</h3>
+        <h3>Porto Covo → Zambujeira</h3>
+        <div class="sub">La più piatta, ma anche la più sabbiosa</div>
         <div class="tags">
           <span class="tag days">3 giorni</span>
-          <span class="tag km">~31 km</span>
-          <span class="tag">Nessun salto</span>
+          <span class="tag km">50–55 km</span>
+          <span class="tag dp">D+ ~325 m</span>
         </div>
       </div>
       <div class="chev">⌄</div>
     </div>
     <div class="card-body">
+      <div class="map" data-pts='[["Porto Covo","Partenza · giorno 1",37.851,-8.790,"start"],["Ilha do Pessegueiro","Forte e isola · dune",37.826,-8.792,"dim"],["Vila Nova de Milfontes","Arrivo giorno 1 · ~19 km",37.725,-8.783,""],["Praia das Furnas","Traversata in barca",37.712,-8.792,"dim"],["Almograve","Arrivo giorno 2",37.651,-8.802,""],["Cabo Sardão","Faro sulle falesie",37.5965,-8.8195,"dim"],["Zambujeira do Mar","Arrivo finale · ~21 km",37.523,-8.788,"end"]]'></div>
+      <div class="map-cap">Cammino continuo lungo la costa alentejana</div>
       <table>
-        <tr><th>Giorno</th><th>Percorso</th><th>km</th><th>Difficoltà</th></tr>
-        <tr><td class="d">1</td><td>Cavaleiro → Zambujeira</td><td>~11–12</td><td><span class="dot med"></span>Moderata</td></tr>
-        <tr><td class="d">2</td><td>Zambujeira → Azenha do Mar</td><td>~12–13</td><td><span class="dot med"></span>Moderata</td></tr>
-        <tr><td class="d">3</td><td>Azenha do Mar → Odeceixe</td><td>~7–8</td><td><span class="dot easy"></span>Facile</td></tr>
+        <tr><th>Giorno</th><th>Percorso</th><th>km</th><th>D+</th><th>Fatica</th></tr>
+        <tr><td class="d">1</td><td>Porto Covo → Milfontes</td><td class="n">16,5–19,5</td><td class="n">~75 m</td><td><span class="dot med"></span>Sabbia</td></tr>
+        <tr><td class="d">2</td><td>Milfontes → Almograve</td><td class="n">12–15</td><td class="n">~75 m</td><td><span class="dot easy"></span>Bassa</td></tr>
+        <tr><td class="d">3</td><td>Almograve → Zambujeira</td><td class="n">20–21</td><td class="n">~175 m</td><td><span class="dot med"></span>Media</td></tr>
       </table>
-      <div class="map" data-pts='[["Cavaleiro","Partenza · giorno 1",37.598,-8.803,"start"],["Cabo Sardão","Faro sulle falesie",37.5965,-8.8195,""],["Zambujeira do Mar","Arrivo giorno 1",37.523,-8.788,""],["Praia dos Alteirinhos","Spiaggia con grotta",37.512,-8.790,""],["Azenha do Mar","Arrivo giorno 2",37.469,-8.792,""],["Odeceixe","Arrivo finale",37.435,-8.766,"end"]]'></div>
-      <div class="map-cap">Percorso continuo, senza spostamenti in taxi</div>
-      <p style="font-size:14.5px;color:#4a5760">Per chi vuole la sensazione vera del cammino: <em>ieri abbiamo finito qui, oggi ripartiamo da qui</em>. E l'ultimo giorno è volutamente corto — si arriva a Odeceixe presto, in tempo per un pranzo con calma invece di una corsa.</p>
-      <div class="note warn"><strong>Alloggio — il punto critico.</strong> Si dovrebbe dormire ad <strong>Azenha do Mar</strong>, che dai dati risulta avere solo un ristorante e nessuna struttura ricettiva certa. Fattibile solo se si trova un alloggio lì o si accetta un transfer serale a Odeceixe/Zambujeira e ritorno la mattina.</div>
-      <div class="stars">
-        <div><b>Panorama</b><span class="s">★★★★★</span></div>
-        <div><b>Fatica</b><span class="s">★★</span></div>
-        <div><b>Tecnico</b><span class="s">★★</span></div>
-        <div><b>Continuità</b><span class="s">★★★★★</span></div>
+      <p style="font-size:14.5px;color:#4a5760">È impressionante quanto poco dislivello ci sia rispetto ai chilometri: quasi 20 km con appena 75 metri di salita. Attenzione però — la prima giornata è comunque impegnativa, ma per un motivo diverso: <strong>spiagge e dune di sabbia profonda</strong> attorno all'Ilha do Pessegueiro, dove il piede affonda a ogni passo.</p>
+      <div class="note good"><strong>Alloggio — nessun problema.</strong> Porto Covo, Milfontes, Almograve e Zambujeira hanno tutti hotel, ostelli, ristoranti e bancomat.</div>
+      <div class="note"><strong>Rispetto alla proposta 1:</strong> fisicamente più piatta, ma meno varia. Qui ci sono più dune, grandi spiagge e costa aperta; la 1 ha più falesie e panorami diversi. È la scelta giusta se il pensiero è <em>"le discese mi danno fastidio, ma camminare 20 km no"</em>.</div>
+      <div class="scores">
+        <div class="score"><b>Panorama</b><div class="val">9<span>/10</span></div><div class="bar"><i style="width:90%"></i></div></div>
+        <div class="score"><b>Fatica</b><div class="val">6<span>/10</span></div><div class="bar b-sage"><i style="width:60%"></i></div></div>
+        <div class="score"><b>Tecnica</b><div class="val">3<span>/10</span></div><div class="bar b-ocean"><i style="width:30%"></i></div></div>
+        <div class="score"><b>Adatta a noi</b><div class="val">9<span>/10</span></div><div class="bar"><i style="width:90%"></i></div></div>
       </div>
     </div>
   </div>
 
   <!-- 4 -->
-  <div class="card" data-days="4">
+  <div class="card pick" data-days="4">
     <div class="card-head">
       <div class="num">4</div>
       <div class="card-title">
-        <h3>Sagres → Lagos completo, ma intelligente</h3>
+        <h3>Porto Covo → Odeceixe</h3>
+        <div class="sub">Il vero mini-Cammino dei Pescatori</div>
         <div class="tags">
+          <span class="tag best">★ Vero cammino</span>
           <span class="tag days">4 giorni</span>
-          <span class="tag km">~40 km</span>
-          <span class="tag">Cammino integrale</span>
+          <span class="tag km">~74 km</span>
+          <span class="tag dp">D+ ~545 m</span>
         </div>
       </div>
       <div class="chev">⌄</div>
     </div>
     <div class="card-body">
+      <div class="map" data-pts='[["Porto Covo","Partenza · giorno 1",37.851,-8.790,"start"],["Ilha do Pessegueiro","Forte e dune",37.826,-8.792,"dim"],["Vila Nova de Milfontes","Fine giorno 1",37.725,-8.783,""],["Almograve","Fine giorno 2",37.651,-8.802,""],["Cabo Sardão","Faro e cicogne",37.5965,-8.8195,"dim"],["Zambujeira do Mar","Fine giorno 3",37.523,-8.788,""],["Azenha do Mar","Villaggio di pescatori",37.469,-8.792,"dim"],["Odeceixe","Arrivo finale",37.435,-8.766,"end"]]'></div>
+      <div class="map-cap">74 km continui, senza mai salire su un taxi</div>
       <table>
-        <tr><th>Giorno</th><th>Percorso</th><th>km</th><th>Difficoltà</th></tr>
-        <tr><td class="d">1</td><td>Sagres → Ingrina</td><td>~11</td><td><span class="dot med"></span>Moderata</td></tr>
-        <tr><td class="d">2</td><td>Ingrina → Salema</td><td>~8–9</td><td><span class="dot hard"></span>Impegnativa</td></tr>
-        <tr><td class="d">3</td><td>Salema → Praia da Luz</td><td>~10–12</td><td><span class="dot med"></span>Moderata</td></tr>
-        <tr><td class="d">4</td><td>Praia da Luz → Lagos</td><td>~10–11</td><td><span class="dot med"></span>Moderata</td></tr>
+        <tr><th>Giorno</th><th>Percorso</th><th>km</th><th>D+</th><th>Fatica</th></tr>
+        <tr><td class="d">1</td><td>Porto Covo → Milfontes</td><td class="n">~19,5</td><td class="n">~75 m</td><td><span class="dot med"></span>Sabbia</td></tr>
+        <tr><td class="d">2</td><td>Milfontes → Almograve</td><td class="n">~15</td><td class="n">~75 m</td><td><span class="dot easy"></span>Bassa</td></tr>
+        <tr><td class="d">3</td><td>Almograve → Zambujeira</td><td class="n">20–21</td><td class="n">~175 m</td><td><span class="dot med"></span>Media</td></tr>
+        <tr><td class="d">4</td><td>Zambujeira → Odeceixe</td><td class="n">19–20</td><td class="n">~220 m</td><td><span class="dot med"></span>Media</td></tr>
       </table>
-      <div class="map" data-pts='[["Sagres","Partenza · giorno 1",37.008,-8.941,"start"],["Praia da Ingrina","Arrivo giorno 1",37.043,-8.876,""],["Praia do Zavial","Sosta pranzo · giorno 2",37.043,-8.870,""],["Salema","Arrivo giorno 2",37.064,-8.831,""],["Burgau","Sosta · giorno 3",37.077,-8.777,""],["Praia da Luz","Arrivo giorno 3",37.088,-8.726,""],["Lagos","Arrivo finale · Ponta da Piedade",37.102,-8.674,"end"]]'></div>
-      <div class="map-cap">Percorso continuo a piedi, dalla punta sud-ovest fino a Lagos</div>
-      <p style="font-size:14.5px;color:#4a5760">Il Sagres–Lagos vero, senza saltare niente — con la tappa più dura spezzata in due giorni corti. La soddisfazione di dire <em>"abbiamo fatto tutto il tratto"</em> è reale.</p>
-      <div class="note warn"><strong>Attenzione al giorno 2.</strong> Sono solo 8–9 km, ma <strong>9 km non vuol dire 9 km facili</strong>: è il tratto con i saliscendi continui su pietre smosse. Con terreno asciutto e bastoncini è gestibile; dopo giorni di pioggia lo eviterei.</div>
-      <div class="note warn"><strong>Alloggio — da verificare.</strong> A <strong>Ingrina</strong> risulta esserci solo un ristorante (accetta contanti, chiuso il martedì) e nessun hotel certo. Probabile che serva un transfer serale su Salema o Vila do Bispo e ritorno al mattino.</div>
-      <div class="stars">
-        <div><b>Panorama</b><span class="s">★★★★★</span></div>
-        <div><b>Fatica</b><span class="s">★★★</span></div>
-        <div><b>Tecnico</b><span class="s">★★★★</span></div>
-        <div><b>Continuità</b><span class="s">★★★★★</span></div>
+      <p style="font-size:14.5px;color:#4a5760">Media di 18–19 km al giorno, ma con un dislivello complessivo di appena ~545 metri su quattro giorni. E soprattutto: <strong>è tutto continuo</strong>. Porto Covo → Milfontes → Almograve → Cabo Sardão → Zambujeira → Azenha do Mar → Odeceixe. Non si sale mai su un taxi per saltare qualcosa. È la fotografia più fedele di "fare un cammino".</p>
+      <div class="note good"><strong>Alloggio — nessun problema.</strong> Tutte e cinque le soste sono in paesi attrezzati: Porto Covo, Milfontes, Almograve, Zambujeira, Odeceixe. Hotel, ostelli, ristoranti, farmacia, bancomat ovunque.</div>
+      <div class="note warn"><strong>L'unico vero nemico: la sabbia.</strong> Porto Covo–Milfontes attraversa diverse spiagge e grandi dune. Poco dislivello non significa poca fatica quando il piede affonda. È il tratto da valutare con onestà.</div>
+      <div class="scores">
+        <div class="score"><b>Panorama</b><div class="val">9,5<span>/10</span></div><div class="bar"><i style="width:95%"></i></div></div>
+        <div class="score"><b>Fatica</b><div class="val">7<span>/10</span></div><div class="bar b-sage"><i style="width:70%"></i></div></div>
+        <div class="score"><b>Tecnica</b><div class="val">4<span>/10</span></div><div class="bar b-ocean"><i style="width:40%"></i></div></div>
+        <div class="score"><b>Continuità</b><div class="val">10<span>/10</span></div><div class="bar"><i style="width:100%"></i></div></div>
       </div>
     </div>
   </div>
@@ -356,32 +318,35 @@
     <div class="card-head">
       <div class="num">5</div>
       <div class="card-title">
-        <h3>Best of Algarve — senza il giorno difficile</h3>
+        <h3>Algarve Best Of</h3>
+        <div class="sub">Il massimo spettacolo possibile in quattro giorni</div>
         <div class="tags">
-          <span class="tag best">★ La consigliata</span>
+          <span class="tag best">★ Massimo spettacolo</span>
           <span class="tag days">4 giorni</span>
-          <span class="tag km">~41–44 km</span>
+          <span class="tag km">51–54 km</span>
+          <span class="tag">Evita il tratto duro</span>
         </div>
       </div>
       <div class="chev">⌄</div>
     </div>
     <div class="card-body">
+      <div class="map" data-pts='[["Vila do Bispo","Partenza · giorno 1",37.084,-8.913,"start"],["Cabo de São Vicente","Il faro sulla punta d Europa",37.023,-8.996,"dim"],["Sagres","Fine giorno 1 · base",37.008,-8.941,""],["Praia do Martinhal","Giorno 2",37.012,-8.918,"dim"],["Praia do Barranco","Costa selvaggia",37.024,-8.896,"dim"],["Praia da Ingrina","Fine giorno 2 · ~11 km",37.043,-8.876,""],["Salema","Inizio giorno 3 · in taxi",37.064,-8.831,""],["Burgau","Sosta",37.077,-8.777,"dim"],["Praia da Luz","Fine giorno 3",37.088,-8.726,""],["Ponta da Piedade","Faraglioni · giorno 4",37.081,-8.669,"dim"],["Lagos","Arrivo finale",37.102,-8.674,"end"]]' data-gap="5"></div>
+      <div class="map-cap">Tratteggio grigio = taxi Ingrina → Salema, il tratto tecnico che saltiamo</div>
       <table>
-        <tr><th>Giorno</th><th>Percorso</th><th>km</th><th>Difficoltà</th></tr>
-        <tr><td class="d">1</td><td>Carrapateira — circuito costiero</td><td>~10</td><td><span class="dot med"></span>Moderata</td></tr>
-        <tr><td class="d">2</td><td>Sagres → Ingrina</td><td>~11</td><td><span class="dot med"></span>Moderata</td></tr>
-        <tr><td class="d">3</td><td>Salema → Praia da Luz</td><td>~10–12</td><td><span class="dot med"></span>Moderata</td></tr>
-        <tr><td class="d">4</td><td>Praia da Luz → Lagos</td><td>~10–11</td><td><span class="dot med"></span>Moderata</td></tr>
+        <tr><th>Giorno</th><th>Percorso</th><th>km</th><th>D+</th><th>Fatica</th></tr>
+        <tr><td class="d">1</td><td>Vila do Bispo → Cabo São Vicente → Sagres</td><td class="n">~20</td><td class="n">~120 m</td><td><span class="dot easy"></span>Bassa</td></tr>
+        <tr><td class="d">2</td><td>Sagres → Martinhal → Barranco → Ingrina</td><td class="n">~11</td><td class="n">moderato</td><td><span class="dot med"></span>Media</td></tr>
+        <tr><td class="d">3</td><td>Salema → Burgau → Luz</td><td class="n">10–12</td><td class="n">moderato</td><td><span class="dot med"></span>Media</td></tr>
+        <tr><td class="d">4</td><td>Luz → Ponta da Piedade → Lagos</td><td class="n">10–11</td><td class="n">moderato</td><td><span class="dot med"></span>Media</td></tr>
       </table>
-      <div class="map" data-pts='[["Carrapateira","Circuito costiero · giorno 1",37.180,-8.897,"start"],["Praia da Bordeira","Spiaggia enorme tra le falesie",37.199,-8.907,""],["Praia do Amado","Vista dall alto delle scogliere",37.163,-8.903,""],["Cabo de São Vicente","Punta sud-ovest d Europa",37.023,-8.996,""],["Sagres","Partenza · giorno 2",37.008,-8.941,""],["Praia da Ingrina","Arrivo giorno 2",37.043,-8.876,""],["Salema","Partenza giorno 3 (in taxi)",37.064,-8.831,""],["Praia da Luz","Arrivo giorno 3",37.088,-8.726,""],["Lagos","Arrivo finale",37.102,-8.674,"end"]]' data-gap="3"></div>
-      <div class="map-cap">Segmenti scelti, collegati da transfer · basi fisse a Sagres e Lagos</div>
-      <p style="font-size:14.5px;color:#4a5760">Non è un cammino continuo: è una <strong>selezione dei pezzi migliori</strong>. Si sacrifica la continuità, si guadagna tutto il resto — Carrapateira e Praia da Bordeira, Sagres, Martinhal, Ingrina, Salema, Burgau, Luz, Ponta da Piedade, Lagos. Senza mai affrontare il tratto peggiore.</p>
-      <div class="note good"><strong>Alloggio — la più solida delle sei.</strong> Usando <strong>Sagres e Lagos come basi fisse</strong> con transfer giornalieri, si evita del tutto il problema di cercare un letto in frazioni con un solo ristorante. È il vantaggio nascosto di questa proposta: non solo è la più prudente fisicamente, è anche l'unica che non ha punti interrogativi sul dove dormire.</div>
-      <div class="stars">
-        <div><b>Panorama</b><span class="s">★★★★★</span></div>
-        <div><b>Fatica</b><span class="s">★★½</span></div>
-        <div><b>Tecnico</b><span class="s">★★★</span></div>
-        <div><b>Varietà</b><span class="s">★★★★★</span></div>
+      <p style="font-size:14.5px;color:#4a5760">La sequenza che si vede è difficile da battere: <strong>Cabo de São Vicente → scogliere di Sagres → Fortaleza → Martinhal → Barranco → Ingrina</strong>, poi si salta il tratto tecnico e si riprende con <strong>Salema → Boca do Rio → Burgau → Luz → Ponta da Piedade → Lagos</strong>.</p>
+      <div class="note"><strong>Cos'è cambiato rispetto a prima.</strong> Il primo giorno non parte più da Carrapateira, che costava circa +400 m in 19 km. Ora è Vila do Bispo → Sagres: stessi 20 km ma con appena +120 m. Più sensato — e in più regala Cabo de São Vicente.</div>
+      <div class="note warn"><strong>Alloggio — un punto da sistemare.</strong> A Ingrina risulta esserci solo un ristorante (contanti, chiuso il martedì) e nessuna struttura. Si risolve facilmente restando <strong>due notti a Sagres</strong> con transfer serale, e prendendo poi il taxi per Salema la mattina del giorno 3. Le altre notti — Sagres, Praia da Luz, Lagos — sono tutte in paesi pieni di servizi.</div>
+      <div class="scores">
+        <div class="score"><b>Panorama</b><div class="val">10<span>/10</span></div><div class="bar"><i style="width:100%"></i></div></div>
+        <div class="score"><b>Fatica</b><div class="val">5,5<span>/10</span></div><div class="bar b-sage"><i style="width:55%"></i></div></div>
+        <div class="score"><b>Tecnica</b><div class="val">5<span>/10</span></div><div class="bar b-ocean"><i style="width:50%"></i></div></div>
+        <div class="score"><b>Varietà</b><div class="val">10<span>/10</span></div><div class="bar"><i style="width:100%"></i></div></div>
       </div>
     </div>
   </div>
@@ -391,92 +356,119 @@
     <div class="card-head">
       <div class="num">6</div>
       <div class="card-title">
-        <h3>Alentejo costiero in modalità slow</h3>
+        <h3>Sagres → Lagos completo</h3>
+        <div class="sub">La versione avventurosa — niente viene saltato</div>
         <div class="tags">
           <span class="tag days">4 giorni</span>
-          <span class="tag km">~44 km</span>
-          <span class="tag">Ritmo rilassato</span>
+          <span class="tag km">40–43 km</span>
+          <span class="tag">Un tratto tecnico</span>
         </div>
       </div>
       <div class="chev">⌄</div>
     </div>
     <div class="card-body">
+      <div class="map" data-pts='[["Sagres","Partenza · giorno 1",37.008,-8.941,"start"],["Praia da Ingrina","Fine giorno 1 · ~11 km",37.043,-8.876,""],["Praia do Zavial","Giorno 2 · sosta pranzo",37.043,-8.870,"dim"],["Praia das Furnas","Inizio dei saliscendi",37.055,-8.848,"dim"],["Salema","Fine giorno 2 · solo 8–9 km ma duri",37.064,-8.831,""],["Burgau","Giorno 3",37.077,-8.777,"dim"],["Praia da Luz","Fine giorno 3",37.088,-8.726,""],["Ponta da Piedade","Faraglioni · giorno 4",37.081,-8.669,"dim"],["Lagos","Arrivo finale",37.102,-8.674,"end"]]'></div>
+      <div class="map-cap">Tutto a piedi, compreso il tratto più tecnico del cammino</div>
       <table>
-        <tr><th>Giorno</th><th>Percorso</th><th>km</th><th>Difficoltà</th></tr>
-        <tr><td class="d">1</td><td>Milfontes → Almograve (con barca)</td><td>~12</td><td><span class="dot easy"></span>Facile</td></tr>
-        <tr><td class="d">2</td><td>Almograve → Cabo Sardão</td><td>~10–11</td><td><span class="dot med"></span>Moderata</td></tr>
-        <tr><td class="d">3</td><td>Cabo Sardão → Zambujeira</td><td>~10</td><td><span class="dot med"></span>Moderata</td></tr>
-        <tr><td class="d">4</td><td>Zambujeira → Azenha do Mar</td><td>~12–13</td><td><span class="dot med"></span>Moderata</td></tr>
+        <tr><th>Giorno</th><th>Percorso</th><th>km</th><th>Terreno</th><th>Fatica</th></tr>
+        <tr><td class="d">1</td><td>Sagres → Ingrina</td><td class="n">~11</td><td>costa dolce</td><td><span class="dot med"></span>Media</td></tr>
+        <tr><td class="d">2</td><td>Ingrina → Zavial → Furnas → Salema</td><td class="n">8–9</td><td>roccioso</td><td><span class="dot hard"></span>Tecnica</td></tr>
+        <tr><td class="d">3</td><td>Salema → Luz</td><td class="n">10–12</td><td>moderato</td><td><span class="dot med"></span>Media</td></tr>
+        <tr><td class="d">4</td><td>Luz → Lagos</td><td class="n">10–11</td><td>moderato</td><td><span class="dot med"></span>Media</td></tr>
       </table>
-      <div class="map" data-pts='[["Vila Nova de Milfontes","Partenza · giorno 1",37.725,-8.783,"start"],["Praia das Furnas","Traversata in taxi-boat",37.712,-8.792,""],["Almograve","Arrivo giorno 1 · partenza giorno 2",37.651,-8.802,""],["Cabo Sardão","Faro · arrivo giorno 2",37.5965,-8.8195,""],["Cavaleiro","Dove si dorme (transfer)",37.598,-8.803,""],["Zambujeira do Mar","Arrivo giorno 3",37.523,-8.788,""],["Azenha do Mar","Arrivo finale",37.469,-8.792,"end"]]' data-gap="1"></div>
-      <div class="map-cap">Due giorni interi sulle falesie di Cabo Sardão, senza fretta</div>
-      <p style="font-size:14.5px;color:#4a5760">Due giornate intere dedicate alle falesie di <strong>Cabo Sardão</strong> invece di attraversarle di corsa. È la versione per chi dice: <em>voglio fare un vero piccolo cammino, ma soprattutto voglio godermelo.</em></p>
-      <div class="note warn"><strong>Alloggio — due punti da verificare.</strong> <strong>Cabo Sardão</strong> è un capo con un faro, non un paese: la notte del giorno 2 va risolta con un transfer su Cavaleiro (che ha hotel, ristoranti e negozio) o Zambujeira. E anche qui l'ultima notte ad <strong>Azenha do Mar</strong> è incerta.</div>
-      <div class="stars">
-        <div><b>Panorama</b><span class="s">★★★★★</span></div>
-        <div><b>Fatica</b><span class="s">★★½</span></div>
-        <div><b>Tecnico</b><span class="s">★★</span></div>
-        <div><b>Relax</b><span class="s">★★★★★</span></div>
+      <p style="font-size:14.5px;color:#4a5760">La differenza con la proposta 5 è una sola: lì <strong>saltiamo</strong> Ingrina → Salema, qui lo <strong>facciamo</strong>. Ed è esattamente lì che si incontra il terreno più serio di tutto il viaggio.</p>
+      <div class="note warn"><strong>Il giorno 2 va guardato bene.</strong> Sono solo 8–9 km, ma la tappa intera Sagres–Salema è data tra le più impegnative del cammino: saliscendi continui sulle falesie, sentieri pietrosi, circa +345/−370 m sul percorso completo. Spezzarla risolve il problema della <em>distanza</em>, non quello della <em>tecnicità</em>. Con terreno asciutto e bastoncini è gestibile; dopo giorni di pioggia lo eviterei.</div>
+      <div class="note warn"><strong>Alloggio.</strong> Stesso punto della proposta 5: a Ingrina non risulta un alloggio. Si dorme a Sagres o Salema con transfer.</div>
+      <div class="note"><strong>Da scegliere solo se</strong> le discese su sentiero roccioso non sono un problema. In quel caso, è la più bella di tutte.</div>
+      <div class="scores">
+        <div class="score"><b>Panorama</b><div class="val">10<span>/10</span></div><div class="bar"><i style="width:100%"></i></div></div>
+        <div class="score"><b>Fatica</b><div class="val">5<span>/10</span></div><div class="bar b-sage"><i style="width:50%"></i></div></div>
+        <div class="score"><b>Tecnica</b><div class="val">7<span>/10</span></div><div class="bar b-ocean"><i style="width:70%"></i></div></div>
+        <div class="score"><b>Continuità</b><div class="val">10<span>/10</span></div><div class="bar"><i style="width:100%"></i></div></div>
       </div>
     </div>
   </div>
 </section>
 
 <section>
-  <h2><span class="kicker">A colpo d'occhio</span>Tutte a confronto</h2>
+  <h2><span class="kicker">A colpo d'occhio</span>Tutte e sei a confronto</h2>
   <div class="compare">
     <table>
-      <tr><th>#</th><th>Itinerario</th><th>Giorni</th><th>Fatica</th><th>Wow</th><th>Tecnico</th><th>Alloggio</th></tr>
-      <tr><td class="d">1</td><td>Algarve prudente</td><td>3</td><td class="s">★★★</td><td class="s">★★★★★</td><td class="s">★★★</td><td>✅ Semplice</td></tr>
-      <tr><td class="d">2</td><td>Alentejo highlights</td><td>3</td><td class="s">★★½</td><td class="s">★★★★★</td><td class="s">★★</td><td>⚠️ Azenha</td></tr>
-      <tr><td class="d">3</td><td>Cavaleiro → Odeceixe</td><td>3</td><td class="s">★★</td><td class="s">★★★★★</td><td class="s">★★</td><td>⚠️ Azenha</td></tr>
-      <tr><td class="d">4</td><td>Sagres → Lagos completo</td><td>4</td><td class="s">★★★</td><td class="s">★★★★★</td><td class="s">★★★★</td><td>⚠️ Ingrina</td></tr>
-      <tr class="hl"><td class="d">5</td><td><strong>Best of Algarve</strong></td><td>4</td><td class="s">★★½</td><td class="s">★★★★★</td><td class="s">★★★</td><td>✅ Basi fisse</td></tr>
-      <tr><td class="d">6</td><td>Milfontes → Azenha slow</td><td>4</td><td class="s">★★½</td><td class="s">★★★★★</td><td class="s">★★</td><td>⚠️ 2 punti</td></tr>
+      <tr><th>#</th><th>Percorso</th><th>Giorni</th><th>km</th><th>Terreno</th><th>Panorama</th><th>Alloggio</th></tr>
+      <tr class="hl"><td class="d">1</td><td><strong>Milfontes → Odeceixe</strong></td><td>3</td><td class="n">~54</td><td>basso D+, sabbia</td><td>⭐⭐⭐⭐⭐</td><td>✅</td></tr>
+      <tr><td class="d">2</td><td>Vila do Bispo→Sagres + Salema→Lagos</td><td>3</td><td class="n">~42</td><td>moderato</td><td>⭐⭐⭐⭐⭐+</td><td>✅</td></tr>
+      <tr><td class="d">3</td><td>Porto Covo → Zambujeira</td><td>3</td><td class="n">~55</td><td>molto piatto, molta sabbia</td><td>⭐⭐⭐⭐½</td><td>✅</td></tr>
+      <tr class="hl"><td class="d">4</td><td><strong>Porto Covo → Odeceixe</strong></td><td>4</td><td class="n">~74</td><td>basso D+, sabbia</td><td>⭐⭐⭐⭐⭐</td><td>✅</td></tr>
+      <tr class="hl"><td class="d">5</td><td><strong>Algarve Best Of</strong></td><td>4</td><td class="n">~52</td><td>moderato, evita il duro</td><td>⭐⭐⭐⭐⭐+</td><td>⚠️ Ingrina</td></tr>
+      <tr><td class="d">6</td><td>Sagres → Lagos completo</td><td>4</td><td class="n">~41</td><td>un tratto tecnico</td><td>⭐⭐⭐⭐⭐+</td><td>⚠️ Ingrina</td></tr>
     </table>
   </div>
-  <div class="note"><strong>Sul tema alloggi.</strong> I paesi grandi — Sagres, Salema, Praia da Luz, Lagos, Carrapateira, Milfontes, Almograve, Zambujeira, Odeceixe, Aljezur, Cavaleiro — hanno tutti hotel, ristoranti e servizi. I punti interrogativi sono le soste intermedie in frazioni minuscole (Ingrina, Zavial, Azenha do Mar, Cabo Sardão): lì c'è al massimo un ristorante, spesso chiuso un giorno a settimana. Si risolvono quasi sempre con un transfer serale, ma vanno organizzati prima di partire, non sul posto.</div>
+  <div class="note good"><strong>Buona notizia sugli alloggi.</strong> Con questi nuovi itinerari il problema è quasi sparito: quattro proposte su sei dormono solo in paesi con hotel, ristoranti e farmacia. Restano da sistemare solo le notti a Ingrina nelle proposte 5 e 6 — si risolvono restando a Sagres con un transfer serale.</div>
 </section>
 
 <section>
   <div class="verdict">
     <h2><span class="kicker">Se dovessi scegliere</span>Il verdetto</h2>
     <div class="v-item">
-      <div class="lbl">Se facciamo 3 giorni</div>
-      <div class="pickname">🥇 Proposta 1 — Algarve prudente</div>
-      <p>In tre giorni ti porti a casa una concentrazione impressionante di panorami senza mai affrontare il tratto peggiore. E si dorme sempre in paesi comodi.</p>
+      <div class="lbl">Se abbiamo 3 giorni</div>
+      <div class="pickname">🥇 #1 — Milfontes → Odeceixe</div>
+      <p>15 + 21 + 19 km è perfettamente compatibile con quello che ci siamo detti, e si ha quasi ininterrottamente oceano e falesie davanti. Dopo il tuo feedback questa è nettamente salita di valore: è la prima scelta.</p>
     </div>
     <div class="v-item">
-      <div class="lbl">Se 3 giorni ma preferiamo terreno morbido</div>
-      <div class="pickname">🥈 Proposta 3 — Cavaleiro → Odeceixe</div>
-      <p>Più "cammino", più rilassata, senza discese su pietre smosse. In cambio: più sabbia, e va risolta la notte ad Azenha do Mar.</p>
+      <div class="lbl">Se abbiamo 4 giorni e vogliamo un vero cammino</div>
+      <div class="pickname">🥇 #4 — Porto Covo → Odeceixe</div>
+      <p>74 km in quattro giorni ma solo ~545 m di salita complessiva. Qui l'interrogativo non sono le gambe: è quanto si tollera la sabbia.</p>
     </div>
     <div class="v-item">
-      <div class="lbl">Se facciamo 4 giorni e camminiamo bene</div>
-      <div class="pickname">🥇 Proposta 4 — Sagres → Lagos completo</div>
-      <p>La più bella in assoluto, e la soddisfazione di aver fatto il tratto intero. Solo se le discese tecniche non sono un problema.</p>
+      <div class="lbl">Se abbiamo 4 giorni e vogliamo il massimo spettacolo</div>
+      <div class="pickname">🏆 #5 — Algarve Best Of</div>
+      <p>Probabilmente la mia preferita in assoluto, perché sfrutta esattamente la nuova informazione. Venti km quasi pianeggianti Vila do Bispo–Sagres? Sì. Otto–dieci km rocciosi con discese scomode Ingrina–Salema? Li saltiamo senza rimpianti. E restano Cabo de São Vicente, Sagres, Salema, Burgau, Luz, Ponta da Piedade e Lagos.</p>
     </div>
-    <div class="v-item">
-      <div class="lbl">Se facciamo 4 giorni e vogliamo stare tranquilli</div>
-      <div class="pickname">🏆 Proposta 5 — Best of Algarve</div>
-      <p>Per me la scelta più intelligente in assoluto per noi due: tantissimo spettacolo, giornate da 10–12 km, nessun obbligo di affrontare il tratto peggiore solo per poter dire di aver fatto la tappa completa. E l'unica senza incognite sul dove dormire.</p>
+  </div>
+</section>
+
+<section>
+  <h2><span class="kicker">La vera scelta</span>Alentejo o Algarve?</h2>
+  <p class="lede">Alla fine si riduce a questo. Due modi diversi di vivere gli stessi giorni.</p>
+  <div class="duel">
+    <div>
+      <h4>🌾 Alentejo — proposte 1, 3, 4</h4>
+      <ul>
+        <li>Cammino continuo, mai un taxi</li>
+        <li>Più chilometri, più senso di viaggio</li>
+        <li>Dislivello bassissimo</li>
+        <li>Più sabbia e dune: la fatica è nelle gambe, non nelle ginocchia</li>
+        <li>Falesie di Cabo Sardão, cicogne, spiagge deserte</li>
+        <li>Paesi tranquilli, poco turismo</li>
+      </ul>
+    </div>
+    <div>
+      <h4>🌊 Algarve — proposte 2, 5, 6</h4>
+      <ul>
+        <li>Meno chilometri, più varietà</li>
+        <li>Paesaggio più drammatico e scenografico</li>
+        <li>Qualche trasferimento per togliere i tratti tecnici</li>
+        <li>Cabo de São Vicente e Ponta da Piedade</li>
+        <li>Paesini di pescatori con ristoranti sul mare</li>
+        <li>Più gente, ma a ottobre molto meno</li>
+      </ul>
     </div>
   </div>
 </section>
 
 <section>
   <h2><span class="kicker">Buono a sapersi</span>Note pratiche</h2>
-  <div class="note good"><strong>Ottobre è perfetto.</strong> La stagione escursionistica ufficiale della Rota Vicentina va da settembre a giugno: niente caldo torrido, mare ancora tiepido, sentieri poco affollati.</div>
-  <div class="note"><strong>Bagagli.</strong> La rete ufficiale offre trasporto bagagli e transfer di persone tra alloggi e punti di partenza, arrivo o intermedi. Si cammina con un solo zainetto leggero.</div>
-  <div class="note"><strong>Scarpe e bastoncini.</strong> Il fondo cambia spesso: sabbia, sterrato, passerelle di legno, roccia sconnessa. Scarpe da trekking con buon supporto alla caviglia, e i bastoncini fanno una differenza enorme nelle discese.</div>
-  <div class="note"><strong>Acqua e soste.</strong> Su alcuni tratti non c'è nulla per 10–15 km. Almeno 1,5 litri a testa, e occhio ai ristoranti sulla costa: molti chiudono un giorno a settimana e alcuni accettano solo contanti.</div>
-  <div class="note warn"><strong>Vertigini.</strong> Il sentiero corre a tratti sul ciglio delle falesie, che sono in erosione costante. Sconsigliato a chi soffre di vertigini — su quei tratti si tiene l'interno del sentiero.</div>
+  <div class="note good"><strong>Ottobre è perfetto.</strong> La stagione escursionistica ufficiale va da settembre a giugno: niente caldo torrido, mare ancora tiepido, sentieri poco affollati.</div>
+  <div class="note"><strong>Bagagli.</strong> La rete ufficiale offre trasporto bagagli e transfer di persone tra alloggi e punti di partenza, arrivo o intermedi. Si cammina con un solo zainetto leggero — e su tappe da 20 km fa una differenza enorme.</div>
+  <div class="note"><strong>Camminare sulla sabbia.</strong> È la vera incognita degli itinerari Alentejo. Il consiglio di chi l'ha fatto: andare piano, fare soste frequenti, e dove possibile camminare sulla sabbia bagnata vicino all'acqua, che è molto più compatta.</div>
+  <div class="note"><strong>Acqua e soste.</strong> Su alcuni tratti non c'è nulla per 15 km. Almeno 1,5 litri a testa, e occhio ai ristoranti sulla costa: molti chiudono un giorno a settimana e alcuni accettano solo contanti.</div>
+  <div class="note warn"><strong>Vertigini.</strong> Il sentiero corre a tratti sul ciglio delle falesie, che sono in erosione costante. Su quei tratti si tiene sempre il lato interno.</div>
 </section>
 
 <footer>
   <div class="wrap">
-    Dati da <a href="https://rotavicentina.com/en/fishermens-trail/">rotavicentina.com</a> — sito ufficiale del cammino.<br>
-    Le distanze delle tappe personalizzate sono stime da verificare al momento della prenotazione.
+    Dati di percorso e dislivello dal sito ufficiale <a href="https://rotavicentina.com/en/fishermens-trail/">rotavicentina.com</a>.<br>
+    Le mappe sono indicative — per il tracciato preciso ci sono i file GPX scaricabili dal sito ufficiale.
   </div>
 </footer>
 
@@ -499,15 +491,14 @@
     pts.forEach(function(p,i){
       var name=p[0], desc=p[1], lat=p[2], lng=p[3], kind=p[4]||'';
       latlngs.push([lat,lng]);
+      var sz = (kind === 'dim') ? 19 : 24;
       var icon = L.divIcon({
-        className:'', iconSize:[24,24], iconAnchor:[12,12],
+        className:'', iconSize:[sz,sz], iconAnchor:[sz/2,sz/2],
         html:'<div class="mk '+kind+'">'+(i+1)+'</div>'
       });
-      L.marker([lat,lng],{icon:icon}).addTo(map)
-        .bindPopup('<b>'+name+'</b><br>'+desc);
+      L.marker([lat,lng],{icon:icon}).addTo(map).bindPopup('<b>'+name+'</b><br>'+desc);
     });
 
-    // tratto a piedi vs spostamento (tratteggiato) dopo l'indice "gap"
     for(var i=0;i<latlngs.length-1;i++){
       var isGap = (i === gap);
       L.polyline([latlngs[i],latlngs[i+1]],{
